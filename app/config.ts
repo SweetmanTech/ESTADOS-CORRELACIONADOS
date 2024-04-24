@@ -8,7 +8,13 @@ export const BUENOS_AIRES_SONG_CAMP = '0xe88035cbc6703b18e2899fe2b5f6e435f00ade4
 export const HOME_FRAME = {
   buttons: [
     {
-      label: 'PLAY',
+      label: 'view works',
+    },
+    {
+      label: 'join whitelist',
+    },
+    {
+      label: 'newtro',
     },
   ],
   image: {
