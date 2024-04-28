@@ -4,8 +4,11 @@ import getVerifiedAddressBalanceOf from '@/lib/zora/getVerifiedAddressBalanceOf'
 import getBallFrame from '@/lib/getBallFrame';
 import getVerifiedAddressesFromBody from '@/lib/farcaster/getVerifiedAddressesFromBody';
 import { Address } from 'viem';
+import updateWhitelist from '@/lib/merkle/updateWhitelist';
+
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
+  await updateWhitelist()
   const body: FrameRequest = await req.json();
   const verifiedAddresses = await getVerifiedAddressesFromBody(body)
   const balanceOf = await getVerifiedAddressBalanceOf(verifiedAddresses as Address[])
