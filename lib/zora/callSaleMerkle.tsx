@@ -1,12 +1,9 @@
-import { Address, encodeAbiParameters, maxUint64 } from 'viem';
-import { merkleMinterAbi } from '../abi/merkleMinter';
+import { Address } from 'viem';
 import { whitelistAccount, whitelistClient } from '../clients/whitelistClient';
-import { COLLECTION, FUNDS_RECIPIENT } from '@/app/config';
+import { COLLECTION, MERKLE_MINTER } from '@/app/config';
 import { zora1155Implementation } from '../abi/zora1155Implementation';
 import getSetSaleMerkleData from './getSetSaleMerkleData';
 import { zoraSepolia } from 'viem/chains';
-
-const MERKLE_MINTER = '0x5e5fD4b758076BAD940db0284b711A67E8a3B88c';
 
 const callSaleMerkle = async (root: Address) => {
   const tokenId = 1n;
