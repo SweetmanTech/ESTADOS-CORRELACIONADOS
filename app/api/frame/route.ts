@@ -10,7 +10,6 @@ import updateWhitelist from '@/lib/merkle/updateWhitelist';
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const body: FrameRequest = await req.json();
   const verifiedAddresses = await getVerifiedAddressesFromBody(body)
-  console.log("SWEETS verifiedAddresses", verifiedAddresses)
   if (verifiedAddresses.length > 0) {
     await updateWhitelist(verifiedAddresses[0])
   }
