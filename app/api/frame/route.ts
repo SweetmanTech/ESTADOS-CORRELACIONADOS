@@ -8,9 +8,11 @@ import updateWhitelist from '@/lib/merkle/updateWhitelist';
 
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
-  await updateWhitelist()
   const body: FrameRequest = await req.json();
   const verifiedAddresses = await getVerifiedAddressesFromBody(body)
+  if (verifiedAddresses.length > 0) {
+    await updateWhitelist(verifiedAddresses[0])
+  }
   const balanceOf = await getVerifiedAddressBalanceOf(verifiedAddresses as Address[])
   const isCollector = balanceOf > 0n 
 
