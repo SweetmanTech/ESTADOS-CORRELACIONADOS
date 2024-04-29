@@ -15,13 +15,12 @@ export const HOME_FRAME = {
     },
     {
       action: 'link',
-      label: 'newtro',
-      target: 'https://newtro.xyz'
+      label: 'github',
+      target: 'https://github.com/SweetmanTech/ESTADOS-CORRELACIONADOS'
     },
   ],
   image: {
     src: `${NEXT_PUBLIC_URL}/giphy.gif`,
-    aspectRatio: '1:1',
   },
   postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 } as FrameMetadataType
